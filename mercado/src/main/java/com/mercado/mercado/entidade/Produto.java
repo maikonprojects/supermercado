@@ -14,17 +14,16 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Size(min = 6, max = 18)
+    @Size(min = 3, max = 100)
     private String nomeProduto;
 
-    @Size(min = 6, max = 20)
+    @Size(min = 3, max = 20)
     private String categoria;
 
     @DecimalMin("0.1")
     private Double valor;
 
     @Min(1)
-    @Max(100)
     private int quantidade;
 
     @Size(min = 6, max = 200)
@@ -44,6 +43,9 @@ public class Produto {
         this.descricao = descricao;
         this.dataValidade = dataValidade;
         this.peso = peso;
+    }
+
+    public Produto() {
     }
 
     public String getDescricao() {
